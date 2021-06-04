@@ -5,6 +5,10 @@ import com.macpietr.barbershop.barbershop.service.UserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
+import java.util.List;
+import java.util.Set;
+
 @Component
 public class DataLoader implements CommandLineRunner {
 
@@ -23,6 +27,8 @@ public class DataLoader implements CommandLineRunner {
         userService.saveUser(user);
         User user1 = userService.findUserById(1L);
         System.out.println(user1.getLastname());
+        List<User> users = userService.findAllUsers();
+        users.forEach(System.out::println);
 
     }
 }
