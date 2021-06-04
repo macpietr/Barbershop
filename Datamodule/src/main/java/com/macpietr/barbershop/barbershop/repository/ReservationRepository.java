@@ -1,6 +1,6 @@
-package com.macpietr.barbershop.repository;
+package com.macpietr.barbershop.barbershop.repository;
 
-import com.macpietr.barbershop.model.Reservation;
+import com.macpietr.barbershop.barbershop.model.Reservation;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

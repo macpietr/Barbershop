@@ -1,4 +1,4 @@
-package com.macpietr.barbershop.model;
+package com.macpietr.barbershop.barbershop.model;
 
 import lombok.Getter;
 import lombok.Setter;

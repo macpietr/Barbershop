@@ -6,6 +6,7 @@
     <modules>
         <module>Datamodule</module>
         <module>Application</module>
+        <module>Servicemodule</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
