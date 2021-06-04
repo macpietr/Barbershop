@@ -1,6 +1,5 @@
-package com.macpietr.barbershop.barbershop.model;
+package com.macpietr.barbershop.model;
 
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 

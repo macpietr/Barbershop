@@ -1,4 +1,4 @@
-package com.macpietr.barbershop.barbershop.model;
+package com.macpietr.barbershop.model;
 
 import org.junit.jupiter.api.Test;
 

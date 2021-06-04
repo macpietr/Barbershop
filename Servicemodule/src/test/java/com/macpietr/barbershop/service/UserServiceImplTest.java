@@ -1,22 +1,19 @@
-package com.macpietr.barbershop.barbershop.service;
+package com.macpietr.barbershop.service;
 
-import com.macpietr.barbershop.barbershop.model.User;
+import com.macpietr.barbershop.model.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.test.context.ContextConfiguration;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@ContextConfiguration
-@SpringBootTest
+@SpringBootTest(classes = {com.macpietr.barbershop.TestConfigurationClass.class})
 class UserServiceImplTest {
 
-    private UserServiceImpl userService;
+    private UserService userService;
 
-    public UserServiceImplTest(UserServiceImpl userService) {
+    @Autowired
+    public UserServiceImplTest(UserService userService) {
         this.userService = userService;
     }
 

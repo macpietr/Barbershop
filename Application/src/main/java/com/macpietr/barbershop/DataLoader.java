@@ -1,13 +1,11 @@
-package com.macpietr.barbershop.barbershop;
+package com.macpietr.barbershop;
 
-import com.macpietr.barbershop.barbershop.model.User;
-import com.macpietr.barbershop.barbershop.service.UserService;
+import com.macpietr.barbershop.model.User;
+import com.macpietr.barbershop.service.UserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.io.Serializable;
 import java.util.List;
-import java.util.Set;
 
 @Component
 public class DataLoader implements CommandLineRunner {

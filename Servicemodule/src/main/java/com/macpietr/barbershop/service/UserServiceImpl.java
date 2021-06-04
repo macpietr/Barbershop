@@ -1,7 +1,7 @@
-package com.macpietr.barbershop.barbershop.service;
+package com.macpietr.barbershop.service;
 
-import com.macpietr.barbershop.barbershop.model.User;
-import com.macpietr.barbershop.barbershop.repository.UserRepository;
+import com.macpietr.barbershop.model.User;
+import com.macpietr.barbershop.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

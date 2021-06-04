@@ -1,9 +1,8 @@
-package com.macpietr.barbershop.barbershop.service;
+package com.macpietr.barbershop.service;
 
-import com.macpietr.barbershop.barbershop.model.User;
+import com.macpietr.barbershop.model.User;
 
 import java.util.List;
-import java.util.Set;
 
 public interface UserService {
 
