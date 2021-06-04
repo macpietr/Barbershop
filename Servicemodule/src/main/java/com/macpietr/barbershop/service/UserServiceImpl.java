@@ -5,7 +5,6 @@ import com.macpietr.barbershop.barbershop.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Set;
 
 @Service
 public class UserServiceImpl implements UserService {
