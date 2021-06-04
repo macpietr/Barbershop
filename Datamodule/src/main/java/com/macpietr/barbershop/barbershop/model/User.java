@@ -8,9 +8,11 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Getter @Setter @EqualsAndHashCode
+@Getter @Setter
 public class User extends Person{
 
     @OneToMany(mappedBy = "user")
     private Set<Reservation> reservations;
+
+
 }
