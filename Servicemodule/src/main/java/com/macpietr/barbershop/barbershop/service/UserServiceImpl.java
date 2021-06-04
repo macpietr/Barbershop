@@ -4,6 +4,9 @@ import com.macpietr.barbershop.barbershop.model.User;
 import com.macpietr.barbershop.barbershop.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Set;
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -16,6 +19,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findUserById(Long id) {
         return userRepository.findById(id).get();
+    }
+
+    @Override
+    public List<User> findAllUsers() {
+        return (List<User>) userRepository.findAll();
     }
 
     @Override
