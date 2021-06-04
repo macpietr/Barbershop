@@ -2,11 +2,12 @@ package com.macpietr.barbershop.barbershop.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 
 @MappedSuperclass
-@Getter @Setter
+@Getter @Setter @ToString
 public abstract class Person {
 
     @Id
