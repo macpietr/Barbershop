@@ -7,6 +7,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@Table(name = "client")
 @Getter @Setter
 public class User extends Person{
 
