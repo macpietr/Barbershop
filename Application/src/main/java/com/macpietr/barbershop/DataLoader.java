@@ -17,10 +17,11 @@ public class DataLoader implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         User user = new User();
         user.setFirstname("mack");
         user.setLastname("mackowski");
+        user.setPassword("mack");
 
         userService.saveUser(user);
         User user1 = userService.findUserById(1L);
