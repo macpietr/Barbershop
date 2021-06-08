@@ -17,6 +17,11 @@
             <artifactId>Datamodule</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.macpietr</groupId>
+            <artifactId>Common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
 
