@@ -28,7 +28,7 @@
         </dependency>
         <dependency>
             <groupId>com.macpietr</groupId>
-            <artifactId>Controllermodule</artifactId>
+            <artifactId>Webmodule</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
