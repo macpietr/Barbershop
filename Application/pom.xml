@@ -26,6 +26,11 @@
             <artifactId>Common</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.macpietr</groupId>
+            <artifactId>Controllermodule</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
