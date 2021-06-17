@@ -8,6 +8,7 @@
 <h1>User PAGE</h1>
 <p th:text="${user.getFirstname()}"></p>
 <p th:text="${user.getLastname()}"></p>
+<a href="/adduser">Add user page</a>
 <p>=======================</p>
 <tr th:each="user: ${users}">
     <td th:text="${user.getId()}"/>
