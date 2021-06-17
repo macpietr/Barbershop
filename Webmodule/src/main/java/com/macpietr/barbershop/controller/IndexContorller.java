@@ -20,6 +20,7 @@ public class IndexContorller {
     @GetMapping("/user")
     public String user(Model model){
         model.addAttribute("user", userService.findUserById(1L));
+        model.addAttribute("users", userService.findAllUsers());
         return "user";
     }
 

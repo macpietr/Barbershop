@@ -8,5 +8,12 @@
 <h1>User PAGE</h1>
 <p th:text="${user.getFirstname()}"></p>
 <p th:text="${user.getLastname()}"></p>
+<p>=======================</p>
+<tr th:each="user: ${users}">
+    <td th:text="${user.getId()}"/>
+    <td th:text="${user.getFirstname()}"/>
+    <td th:text="${user.getLastname()}"/>
+    <p>=====</p>
+</tr>
 </body>
 </html>
