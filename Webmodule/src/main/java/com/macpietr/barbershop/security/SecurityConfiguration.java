@@ -29,15 +29,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeRequests()
+                .antMatchers("/").permitAll()
                 .antMatchers("/user").hasAnyRole("ADMIN","USER")
-                .antMatchers("/").permitAll().and()
-                .authorizeRequests().antMatchers("/h2-console/**").permitAll()
+                .antMatchers("/adduser","/h2-console/**").hasRole("ADMIN")
                 .and().formLogin()
                 .loginPage("/login")
                 .usernameParameter("firstname")
                 .and()
                 .logout().permitAll();
-        
+
         httpSecurity.csrf().disable();
         httpSecurity.headers().frameOptions().disable();
     }
