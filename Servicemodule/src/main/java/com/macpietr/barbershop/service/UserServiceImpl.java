@@ -2,18 +2,16 @@ package com.macpietr.barbershop.service;
 
 import com.macpietr.barbershop.model.User;
 import com.macpietr.barbershop.repository.UserRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
-
-    public UserServiceImpl(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 
     @Override
     public User findUserById(Long id) {
@@ -23,6 +21,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findUserByEmail(String email) {
         return userRepository.findByEmail(email);
+    }
+
+    @Override
+    public User findUserByFirstname(String firstname) {
+        return userRepository.findByFirstname(firstname);
     }
 
     @Override

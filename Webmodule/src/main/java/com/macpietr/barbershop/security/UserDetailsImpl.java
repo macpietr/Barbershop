@@ -1,5 +1,6 @@
 package com.macpietr.barbershop.security;
 
+import com.macpietr.barbershop.model.User;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -11,25 +12,29 @@ import java.util.Collection;
 @NoArgsConstructor
 public class UserDetailsImpl implements UserDetails {
 
-    private String userName;
+    private String firstname;
+    private String password;
+    private String role;
 
-    public UserDetailsImpl(String userName) {
-        this.userName = userName;
+    public UserDetailsImpl(User user) {
+        this.firstname = user.getFirstname();
+        this.password = user.getPassword();
+        this.role = user.getRole();
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
+        return Arrays.asList(new SimpleGrantedAuthority(role));
     }
 
     @Override
     public String getPassword() {
-        return "pass";
+        return password;
     }
 
     @Override
     public String getUsername() {
-        return userName;
+        return firstname;
     }
 
     @Override
