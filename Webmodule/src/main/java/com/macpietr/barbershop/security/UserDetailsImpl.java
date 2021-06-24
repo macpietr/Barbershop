@@ -1,5 +1,6 @@
 package com.macpietr.barbershop.security;
 
+import com.macpietr.barbershop.model.Person;
 import com.macpietr.barbershop.model.User;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
@@ -12,14 +13,14 @@ import java.util.Collection;
 @NoArgsConstructor
 public class UserDetailsImpl implements UserDetails {
 
-    private String firstname;
+    private String email;
     private String password;
     private String role;
 
-    public UserDetailsImpl(User user) {
-        this.firstname = user.getFirstname();
-        this.password = user.getPassword();
-        this.role = user.getRole();
+    public UserDetailsImpl(Person person) {
+        this.email = person.getEmail();
+        this.password = person.getPassword();
+        this.role = person.getRole();
     }
 
     @Override
@@ -34,7 +35,7 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public String getUsername() {
-        return firstname;
+        return email;
     }
 
     @Override

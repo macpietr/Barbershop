@@ -34,7 +34,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/adduser","/h2-console/**").hasRole("ADMIN")
                 .and().formLogin()
                 .loginPage("/login")
-                .usernameParameter("firstname")
+                .usernameParameter("email")
                 .and()
                 .logout().permitAll();
 
