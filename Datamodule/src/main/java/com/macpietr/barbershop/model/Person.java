@@ -9,11 +9,8 @@ import javax.persistence.*;
 
 @MappedSuperclass
 @Getter @Setter @ToString @EqualsAndHashCode
-public abstract class Person {
+public abstract class Person extends BaseEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String firstname;
     private String lastname;
     private String email;

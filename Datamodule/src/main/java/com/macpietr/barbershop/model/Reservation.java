@@ -9,11 +9,8 @@ import java.util.Date;
 
 @Entity
 @Getter @Setter
-public class Reservation {
+public class Reservation extends BaseEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     @Enumerated(EnumType.STRING)
     private ServiceType serviceType;
     private Date term;
