@@ -41,11 +41,5 @@ class UserServiceImplTest {
         User user1 = userService.findUserByEmail("mack@mack.pl");
         assertEquals(user, user1);
     }
-
-    @Test
-    void testFindUserByFirstname(){
-        User user1 = userService.findUserByFirstname("mack");
-        assertEquals(user,user1);
-    }
-
+    
 }

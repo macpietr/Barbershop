@@ -32,4 +32,9 @@ public class UserServiceImpl implements UserService {
     public void saveUser(User user) {
         userRepository.save(user);
     }
+
+    @Override
+    public void saveAllUsers(List<User> users) {
+        userRepository.saveAll(users);
+    }
 }
