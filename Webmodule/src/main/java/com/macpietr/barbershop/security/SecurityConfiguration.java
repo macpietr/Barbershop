@@ -29,7 +29,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeRequests()
-                .antMatchers("/").permitAll()
+                .antMatchers("/","/thanks","/comeon","/confirmation").permitAll()
                 .antMatchers("/user").hasAnyRole("ADMIN","USER")
                 .antMatchers("/adduser","/h2-console/**").hasRole("ADMIN")
                 .and().formLogin()

@@ -24,6 +24,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User findUserByConfirmationUrl(String confirmationUrl) {
+        return userRepository.findByConfirmationUrl(confirmationUrl);
+    }
+
+    @Override
     public List<User> findAllUsers() {
         return (List<User>) userRepository.findAll();
     }

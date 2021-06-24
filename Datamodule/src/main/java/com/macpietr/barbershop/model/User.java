@@ -13,6 +13,5 @@ public class User extends Person{
 
     @OneToMany(mappedBy = "user")
     private Set<Reservation> reservations;
-
-
+    private String confirmationUrl;
 }

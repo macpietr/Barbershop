@@ -16,11 +16,13 @@ public class UserDetailsImpl implements UserDetails {
     private String email;
     private String password;
     private String role;
+    private boolean confirmed;
 
     public UserDetailsImpl(Person person) {
         this.email = person.getEmail();
         this.password = person.getPassword();
         this.role = person.getRole();
+        this.confirmed = person.isConfirmed();
     }
 
     @Override
@@ -55,6 +57,6 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return confirmed;
     }
 }

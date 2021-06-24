@@ -16,4 +16,6 @@ public abstract class Person extends BaseEntity{
     private String email;
     private String password;
     private String role;
+    private boolean confirmed;
+    private int wrongLoginCount;
 }

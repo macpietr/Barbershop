@@ -30,6 +30,7 @@ public class DataLoader implements CommandLineRunner {
         user.setLastname("mackowski");
         user.setPassword("mack");
         user.setRole("ROLE_USER");
+        user.setConfirmed(true);
 
         User user1 = new User();
         user1.setEmail("zuz@zuz.pl");
@@ -37,6 +38,7 @@ public class DataLoader implements CommandLineRunner {
         user1.setLastname("kochany");
         user1.setPassword("zuz");
         user1.setRole("ROLE_USER");
+        user1.setConfirmed(true);
 
         List<User> userList = new ArrayList<>();
         userList.add(user);
@@ -47,6 +49,7 @@ public class DataLoader implements CommandLineRunner {
         barber.setFirstname("admin");
         barber.setPassword("admin");
         barber.setRole("ROLE_ADMIN");
+        barber.setConfirmed(true);
 
         userService.saveAllUsers(userList);
         barberService.saveBarber(barber);
