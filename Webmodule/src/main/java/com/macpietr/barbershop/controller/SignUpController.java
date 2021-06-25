@@ -7,6 +7,7 @@ import com.macpietr.barbershop.service.BarberService;
 import com.macpietr.barbershop.service.UserService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,16 +23,18 @@ public class SignUpController {
     private UserService userService;
     private BarberService barberService;
     private MailService mailService;
+    private PasswordEncoder passwordEncoder;
 
     @Value("${confirmation.email.subject}")
     private String emailSubject;
     @Value("${confirmation.email.url}")
     private String confirmationUrl;
 
-    public SignUpController(UserService userService, BarberService barberService, MailService mailService) {
+    public SignUpController(UserService userService, BarberService barberService, MailService mailService, PasswordEncoder passwordEncoder) {
         this.userService = userService;
         this.barberService = barberService;
         this.mailService = mailService;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @GetMapping("/signup")
@@ -67,6 +70,7 @@ public class SignUpController {
     }
 
     private void setUserDetails(User user) {
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setRole("ROLE_USER");
         user.setConfirmationUrl(UrlGenerator.generate());
         user.setConfirmed(false);
