@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -18,10 +18,10 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="/adduser">Add User</a></li>
+                        <li sec:authorize="hasRole('ADMIN')" class="nav-item"><a class="nav-link" href="/adduser">Add User</a></li>
+                        <li sec:authorize="hasRole('ADMIN')" class="nav-item"><a class="nav-link" href="/h2-console">H2 DB</a></li>
                         <li class="nav-item"><a class="nav-link" href="/user">Show Users</a></li>
                         <li class="nav-item"><a class="nav-link" href="/signup">Sign Up</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/h2-console">H2 DB</a></li>
                         <li class="nav-item" th:switch="${#authorization.expression('isAuthenticated()')} ? true : false">
                             <a th:case="true" class="nav-link bg-danger" th:href="@{/logout}">Log Out</a>
                             <a th:case="false" class="nav-link bg-success" th:href="@{/login}">Log in</a>
