@@ -20,6 +20,7 @@
                     <ul class="navbar-nav ms-auto">
                         <li sec:authorize="hasRole('ADMIN')" class="nav-item"><a class="nav-link" href="/adduser">Add User</a></li>
                         <li sec:authorize="hasRole('ADMIN')" class="nav-item"><a class="nav-link" href="/h2-console">H2 DB</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/reservation">Book the term!</a></li>
                         <li class="nav-item"><a class="nav-link" href="/user">Show Users</a></li>
                         <li class="nav-item"><a class="nav-link" href="/signup">Sign Up</a></li>
                         <li class="nav-item" th:switch="${#authorization.expression('isAuthenticated()')} ? true : false">
